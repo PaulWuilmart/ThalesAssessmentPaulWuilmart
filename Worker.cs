@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ThalesSolution
 {
     public class Worker
     {
+        private static readonly string separator = " - ";
         public string Name { get; set; }
         public string Role { get; set; }
         public List<Worker> Supervised { get; set; }
@@ -20,17 +17,15 @@ namespace ThalesSolution
             Supervised = new List<Worker>();
         }
 
-        public static Worker FromString(string toStringResult)
-        {
-            int separatorIndex = toStringResult.IndexOf('-');
-            String name = toStringResult.Substring(0, separatorIndex - 1);
-            String role = toStringResult.Substring(separatorIndex + 2);
-            return new Worker(name, role);
-
-        }
         public override string ToString()
         {
-            return Name + " - " + Role;
+            return Name + separator + Role;
+        }
+
+        public static Worker FromString(string toStringResult)
+        {
+            string[] split = toStringResult.Split( new[] { separator }, StringSplitOptions.RemoveEmptyEntries);
+            return new Worker(split[0], split[1]);
         }
 
 
@@ -48,13 +43,13 @@ namespace ThalesSolution
             }
         }
  
-        public String GetDataRaw()
+        public string GetDataRaw()
         {
-            String data = "";
+            string data = "";
             return data;
         }
 
-        public void addSupervised(Worker toSupervise)
+        public void AddSupervised(Worker toSupervise)
         {
             if (!Supervised.Contains(toSupervise))
             {

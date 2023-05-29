@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeView = new System.Windows.Forms.TreeView();
             this.addUnsupervisedButton = new System.Windows.Forms.Button();
             this.addSupervisedButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
@@ -38,14 +38,19 @@
             this.roleLabel = new System.Windows.Forms.Label();
             this.removeButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // treeView1
+            // treeView
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(561, 416);
-            this.treeView1.TabIndex = 0;
+            this.treeView.Location = new System.Drawing.Point(12, 27);
+            this.treeView.Name = "treeView";
+            this.treeView.Size = new System.Drawing.Size(555, 401);
+            this.treeView.TabIndex = 0;
             // 
             // addUnsupervisedButton
             // 
@@ -123,9 +128,42 @@
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(154, 23);
             this.updateButton.TabIndex = 9;
-            this.updateButton.Text = "Update Person";
+            this.updateButton.Text = "Update person";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -141,9 +179,13 @@
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.addSupervisedButton);
             this.Controls.Add(this.addUnsupervisedButton);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.treeView);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Organization structure manager";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,7 +193,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.Button addUnsupervisedButton;
         private System.Windows.Forms.Button addSupervisedButton;
         private System.Windows.Forms.Label errorLabel;
@@ -161,6 +203,10 @@
         private System.Windows.Forms.Label roleLabel;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
 

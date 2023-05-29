@@ -42,12 +42,6 @@ namespace ThalesSolution
                 return (w.Name == Name) && (w.Role == Role);
             }
         }
- 
-        public string GetDataRaw()
-        {
-            string data = "";
-            return data;
-        }
 
         public void AddSupervised(Worker toSupervise)
         {
